@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <script defer src="./js/bootstrap.bundle.js"></script>
+    <script defer src="./js/bootstrap.js"></script>
+    <script defer src="./js/custom.js"></script>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <script type="text/javascript">
+        new Twitch.Player("twitch-embed", {
+            channel: "esl_csgo"
+        });
+    </script>
+
+    <title>CS - LifeHacks</title>
+
+</head>
+
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="./img/ancient720.webm" type="video/mp4">
+    </video>
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <i class="bi bi-steam fs-2 text-white"></i>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Counter Strike |</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white" onclick="showContent('playcs')">Servidores</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white" onclick="showContent('stream')">Directo</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white" onclick="showContent('cfg')">Configuración</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white" onclick="showContent('tacticas')">Tácticas</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Play CSGO -->
+    <section id="playcs" class="row-cols-12 bg-white bg-opacity-50 visible">
+
+        <section class="row container-fluid p-3 m-0 justify-content-center">
+            <!-- Título -->
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">Servidores</h1>
+                <p class="fs-5 text-muted">Comienza a jugar en los servidores oficiales de Faceit. Haz click en el botón
+                    conectar para entrar al servidor.</p>
+            </div>
+            <!-- Servidor-1 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white  my-4">
+                <img class="card-img-top" src="./img/de_inferno.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Inferno</h5>
+                    <p class="card-text">Servidor: Francia<br>Jugadores: 14/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 mx-2 text-black"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+            <span class="col-1"></span>
+            <!-- Servidor-2 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_overpass.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Overpass</h5>
+                    <p class="card-text">Servidor: Alemania<br>Jugadores: 15/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 mx-2 text-black"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+            <span class="col-1  "></span>
+            <!-- Servidor-3 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_mirage.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Mirage</h5>
+                    <p class="card-text">Servidor: Alemania<br>Jugadores: 12/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6  mx-2 text-black"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Servidor-4 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_ancient.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Ancient</h5>
+                    <p class="card-text">Servidor: Suiza<br>Jugadores: 8/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 text-black mx-2"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+            <span class="col-1"></span>
+            <!-- Servidor-5 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_nuke.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Nuke</h5>
+                    <p class="card-text">Servidor: Francia<br>Jugadores: 10/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 text-black mx-2"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+            <span class="col-1"></span>
+            <!-- Servidor-6 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_vertigo.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Vertigo</h5>
+                    <p class="card-text">Servidor: España<br>Jugadores: 15/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 text-black mx-2"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+
+            <!-- Servidor-7 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_tuscan.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Tuscan</h5>
+                    <p class="card-text">Servidor: Suiza<br>Jugadores: 4/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 text-black mx-2"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+            <span class="col-1"></span>
+            <!-- Servidor-8 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_train.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Train</h5>
+                    <p class="card-text">Servidor: Inglaterra<br>Jugadores: 15/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 text-black mx-2"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+            <span class="col-1"></span>
+            <!-- Servidor-9 -->
+            <div class="card col-md-3 col-lg-3 bg-gradient bg-dark text-white my-4">
+                <img class="card-img-top" src="./img/de_dust2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">FFA - DeathMatch - Dust_2</h5>
+                    <p class="card-text">Servidor: España<br>Jugadores: 9/15</p>
+                    <a rel="noopener noreferrer"
+                        href="steam://rungame/730/76561202255233023/+connect%20213.202.242.69:27015" target="_blank"
+                        class="btn btn-primary bg-warning text-black border-2 botones">
+                        <i class="bi bi-play-circle fs-6 text-black mx-2"></i>CONECTAR
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Twitch Stream -->
+    <section id="stream" class="row-cols-12 bg-white bg-opacity-50 no-visible text-center">
+        <html>
+
+        <body>
+            <!-- Add a placeholder for the Twitch embed -->
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal">ESL - CSGO</h1>
+                <p class="fs-5 text-muted">Partidos en directo desde el canal oficial 'ESL_CSGO'.</p>
+                <hr>
+            </div>
+            
+            <div class="row justify-content-center">   
+                <!--main stream  -->
+               <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                    <div class="ratio ratio-4x3" id="twitch-embed-1" class="col-10"></div>
+               </div>
+            </div>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <hr>
+                <h1 class="display-4 fw-normal">ESL - CSGO - b</h1>
+                <p class="fs-5 text-muted">Partidos en directo desde el segundo canal oficial 'ESL_CSGOb'.</p>
+            </div>
+            <div class="row justify-content-center">   
+                <!--main stream  -->
+               <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                    <div class="ratio ratio-4x3" id="twitch-embed-2" class="col-10"></div>
+               </div>
+           </div>
+
+            <!-- Load the Twitch embed JavaScript file -->
+            <script src="https://embed.twitch.tv/embed/v1.js"></script>
+            
+            <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+            <script type="text/javascript">
+                new Twitch.Embed("twitch-embed-1", {
+                    channel: "esl_csgo",
+                    autoplay: false,
+                    layout: "video",
+                    height: "auto",
+                    width: "80%",
+                    // Only needed if this page is going to be embedded on other websites
+                    parent: ["embed.example.com", "othersite.example.com"]
+                });
+            </script>
+            <!-- Add a placeholder for the Twitch embed -->
+            
+            <div id="twitch-embed" class="col-12"></div>
+
+            <!-- Load the Twitch embed JavaScript file -->
+            <script src="https://embed.twitch.tv/embed/v1.js"></script>
+            
+            <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+            <script type="text/javascript">
+                new Twitch.Embed("twitch-embed-2", {
+                    channel: "esl_csgob",
+                    autoplay: false,
+                    layout: "video",
+                    height: "600px&",
+                    width: "90%",
+                    // Only needed if this page is going to be embedded on other websites
+                    parent: ["embed.example.com", "othersite.example.com"]
+                });
+            </script>
+        </body>
+
+        </html>
+
+
+    </section>
+
+    <!-- CFG's -->
+    <section id="cfg" class="row-cols-12 bg-white bg-opacity-50 no-visible container-fluid justify-content-center">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Configuración - CFG</h1>
+            <p class="fs-5 text-muted">Descarga la configuración de juego de tu jugador profesional favorito haciendo
+                click en "Descargar CFG".</p>
+        </div>
+        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
+            <spam class="col-lg-1"></spam>
+            <!-- player 1 -->
+            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+                <h2 class="fw-bold text-center text-dark">S1mple</h2>
+                <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
+                    <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/s1mple.png"
+                        alt="S1mple profile">
+                </div>
+
+                <p class="p-3 text-dark rounded-1 border-dark border bg-white bg-opacity-50 fw-bold">Crosshair<br>
+                    <code>
+                        cl_crosshairsize 2; cl_crosshairstyle 4; cl_crosshairgap -3; cl_crosshairdot 0;
+                        cl_crosshairthickness 0; cl_crosshair_drawoutline 0; cl_crosshair_outlinethickness 0.5;
+                        cl_crosshaircolor 1; cl_crosshaircolor_r 255; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255;
+                        cl_crosshair_sniper_width 1;
+                    </code>
+                </p>
+                <a href="https://prosettings.net/wp-content/uploads/s1mple.zip?lastmod=2022-10-30+04%3A13%3A24"
+                    target="_blank" rel="Simple cfg" type="button"
+                    class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG</a>
+            </div>
+
+            <spam class="col-lg-2"></spam>
+            <!-- player 2 -->
+            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+                <h3 class="fw-normal text-center text-dark">El1ge</h3>
+                <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
+                    <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/elige.png"
+                        alt="El1ge profile">
+                </div>
+
+                <p class="p-3 text-dark rounded-1 border-dark border bg-white bg-opacity-50 fw-bold">Crosshair<br>
+                    <code>
+                        cl_crosshairalpha 255; cl_crosshaircolor 5; cl_crosshaircolor_b 200; cl_crosshaircolor_g 255;
+                        cl_crosshaircolor_r 255; cl_crosshairdot 0;cl_crosshairgap 0; cl_crosshairsize 1.5; cl_crosshairstyle 4;
+                        cl_crosshairthickness 0; cl_crosshair_drawoutline 1; cl_crosshair_outlinethickness 0.5;
+                        cl_crosshair_sniper_width 2;
+                    </code>
+                </p>
+                <a href="https://prosettings.net/wp-content/uploads/elige.zip?lastmod=2022-04-08+06%3A21%3A25"
+                    target="_blank" rel="El1ge cfg" type="button"
+                    class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG</a>
+            </div>
+        </div>
+        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
+            <spam class="col-lg-1"></spam>
+            <!-- player 3 -->
+            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+                <h3 class="fw-normal text-center text-dark">Zywoo</h3>
+                <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
+                    <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/zywoo.png"
+                        alt="Zywoo profile">
+                </div>
+
+                <p class="p-3 text-dark rounded-1 border-dark border bg-white bg-opacity-50 fw-bold">Crosshair<br>
+                    <code>
+                        cl_crosshairsize 2; cl_crosshairstyle 4; cl_crosshairgap -3; cl_crosshairdot 0; cl_crosshairthickness 0;
+                        cl_crosshair_drawoutline 0; cl_crosshair_outlinethickness 0.5;cl_crosshaircolor 1; 
+                        cl_crosshaircolor_r 255; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255; cl_crosshair_sniper_width 1;
+                        cl_crosshairusealpha 1;cl_crosshairalpha 255;
+                    </code>
+                </p>
+                <a href="https://prosettings.net/wp-content/uploads/zywoo.zip?lastmod=2022-05-12+08%3A02%3A33"
+                    target="_blank" rel="Zywoo cfg" type="button"
+                    class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG</a>
+            </div>
+        
+            <spam class="col-lg-2"></spam>
+            <!-- player 4 -->
+            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+                <h3 class="fw-normal text-center text-dark">Flamie</h3>
+                <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
+                    <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/flamie.png"
+                        alt="Flamie profile">
+                </div>
+
+                <p class="p-3 text-dark rounded-1 border-dark border bg-white bg-opacity-50 fw-bold">Crosshair<br>
+                    <code>
+                        cl_crosshairalpha 255; cl_crosshaircolor 5; cl_crosshairdot 1; cl_crosshairgap -5; cl_crosshairsize 1;
+                        cl_crosshairstyle 5; cl_crosshairusealpha 1; cl_crosshairthickness 0; cl_crosshair_drawoutline 0;
+                        cl_crosshair_sniper_width 1; cl_crosshaircolor_b 255; cl_crosshaircolor_g 255; cl_crosshaircolor_r 255;
+                    </code>
+                </p>
+                <a href="https://prosettings.net/wp-content/uploads/flamie.zip?lastmod=2022-06-03+21%3A23%3A34"
+                    target="_blank" rel="Flamie cfg" type="button"
+                    class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG</a>
+            </div>
+        </div>
+
+        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
+            <spam class="col-lg-1"></spam>
+            <!-- player 5 -->
+            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+                <h3 class="fw-normal text-center text-dark">Jame</h3>
+                <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
+                    <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/jame.png"
+                        alt="Jame profile">
+                </div>
+
+                <p class="p-3 text-dark rounded-1 border-dark border bg-white bg-opacity-50 fw-bold">Crosshair<br>
+                    <code>
+                        cl_crosshair_drawoutline 0; cl_crosshairalpha 255; cl_crosshaircolor 4; cl_crosshaircolor_b 50; cl_crosshaircolor_g 250;
+                        cl_crosshaircolor_r 50; cl_crosshairdot 1; cl_crosshairgap -3; cl_crosshairsize 1; cl_crosshairstyle 4;
+                        cl_crosshairthickness 0; cl_crosshair_sniper_width 1;
+                    </code>
+                </p>
+                <a href="https://prosettings.net/wp-content/uploads/jame.zip?lastmod=2022-11-16+16%3A29%3A22"
+                    target="_blank" rel="Jame cfg" type="button"
+                    class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG
+                </a>
+            </div>
+
+            <spam class="col-lg-2"></spam>
+            <!-- player 6 -->
+            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+                <h3 class="fw-normal text-center text-dark">Sh1ro</h3>
+                <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
+                    <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/sh1ro.png"
+                        alt="Sh1ro profile">
+                </div>
+
+                <p class="p-3 text-dark rounded-1 border-dark border bg-white bg-opacity-50 fw-bold">Crosshair<br>
+                    <code>
+                        cl_crosshair_drawoutline 0; cl_crosshairalpha 255; cl_crosshaircolor 2; cl_crosshaircolor_b 255; cl_crosshaircolor_g 255; 
+                        cl_crosshaircolor_r 255; cl_crosshairdot 0; cl_crosshairgap -3; cl_crosshairsize 2; cl_crosshairstyle 4; cl_crosshairthickness 0; 
+                        cl_crosshair_sniper_width 1;
+                    </code>
+                </p>
+                <a href="https://prosettings.net/wp-content/uploads/sh1ro.zip?lastmod=2022-04-05+05%3A51%3A16"
+                    target="_blank" rel="Sh1ro cfg" type="button"
+                    class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tácticas -->
+    <section id="tacticas" class="col-12 bg-white bg-opacity-50 no-visible">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Tácticas y Mapas</h1>
+            <p class="fs-5 text-muted">Descubre como mejorar en tus partidas competiticas aplicando tácticas y ampliado tu conocimiento sobre los mapas.</p>
+        </div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs justify-content-center " id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="inferno-tab" data-bs-toggle="tab" data-bs-target="#inferno"
+                    type="button" role="tab" aria-controls="inferno" aria-selected="true">Inferno</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="overpass-tab" data-bs-toggle="tab" data-bs-target="#overpass"
+                    type="button" role="tab" aria-controls="overpass" aria-selected="false">Overpass</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="mirage-tab" data-bs-toggle="tab" data-bs-target="#mirage"
+                    type="button" role="tab" aria-controls="mirage" aria-selected="false">Mirage</button>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- INFERNO -->
+            <div class="tab-pane active" id="inferno" role="tabpanel" aria-labelledby="inferno-tab">
+                <!-- LOGO MAPA -->
+                <div class="row justify-content-center">    
+                    <div class="col-md-6 col-lg-2 mx-lg-5 my-5 ">
+                                <img class="img-fluid" src="./img/inferno/Set_inferno_2.webp" alt="Inferno logo"> 
+                    </div>
+                </div>
+                
+                <!-- TITULO -->
+                <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                    <h1 class="display-5 fw-normal">DE_INFERNO</h1>  
+                </div>
+                <hr>
+                <!-- CAROUSEL -->
+                <div class="row justify-content-center bg-dark">    
+                    <div class="col-md-10 col-lg-5 mx-lg-5 my-5 ">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                              
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/inferno/Inferno-asite2.webp" class="d-block w-100" alt="Punto de A">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Punto de A</h5>
+                                  <p>Vista del punto de A desde foso.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-asite1.webp" class="d-block w-100" alt="Punto de A">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Punto de A</h5>
+                                  <p>Vista del punto de A desde moto.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-altmid2.webp" class="d-block w-100" alt="Second Mid">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Second Mid</h5>
+                                  <p>Vista de 'second mid' desde puente.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-mid1.webp" class="d-block w-100" alt="Medio">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Medio</h5>
+                                  <p>Vista de medio desde la entrada a banana.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-mid2.webp" class="d-block w-100" alt="Medio">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Medio</h5>
+                                  <p>Vista de medio desde el punto de A.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-banana1.webp" class="d-block w-100" alt="Banana">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Banana</h5>
+                                  <p>Vista de banana desde coche.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-bsite1.webp" class="d-block w-100" alt="Punto de B">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Punto de B</h5>
+                                  <p>Vista del punto de B desde banana.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/inferno/Inferno-bsite2.webp" class="d-block w-100" alt="Punto de B">
+                                <div class="carousel-caption d-none d-md-block">
+                                  <h5>Punto de B</h5>
+                                  <p>Vista del punto de B desde 'CT'. </p>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="row justify-content-center">
+                        <!-- PRIMER VIDEO -->
+                    <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dVj47-alFFQ" frameborder="0" allowfullscreen=""></iframe>
+                                </div>  
+                    </div>
+                    <!-- COMO JUGAR -->
+                    <span class="col-lg-5 mx-lg-5 my-5">
+                        <h2 class="text-center text-break text-bg-dark text-monospace">Táctica, ejecutar punto
+                            de A en el mapa de Inferno.</h2>
+                        <p class="text-left fw-bold p-3 fs-4 ">Inferno es una mapa con multitud de táticas ya definidas. Las
+                            defensas y los ataque se encuentran
+                            más definidos que otros mapas. Si deseamos salir victoriosos del encuentro deberemos
+                            encerrar a nuestro nival para pillarlo
+                            de imprevisto en nuestro ataque. En su defecto esperar el fallo de oponente es una
+                            opción a tener encuenta.
+                            <br><br>Para lograr una ejecución completa como mínimo antes nos debemos asegurar el
+                            control de banana.
+                            Podemos hacerlo enviando a un jugador que se encargue de denegar la información
+                            mediante utilidad básica, ó enviando a
+                            dos jugadores a tomar el control total de la misma, haciendo que el rival retroceda
+                            en su defensa del punto B.
+                            Una vez tomado el control básico de los puntos esenciales podemos ejecutar en
+                            cualquier punto.
+                            <br><br>El siguiente paso es concentrar todos los jugadores en sus respectivos
+                            posicionamientos.
+                            Deberemos hacerlo rápidamente y de la manera más sigilosa posible.
+
+                        </p>
+                    </span>
+                </div>
+                
+                <div class="row justify-content-center">   
+                     <!--SEGUNDO VIDEO  -->
+                    <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/ORrkAHo_rIM" frameborder="0" allowfullscreen=""></iframe>
+                        </div>  
+                    </div>
+                    <!-- MAPA CALL OUTS -->
+                    <span class="col-lg-5 mx-lg-5 my-5 img-fluid text-center">
+                        <img class="img-fluid rounded rounded-5 h-75" src="./img/inferno/callouts.jpg" alt="radar inferno" srcset="">
+                    </span>
+                </div>
+            </div> 
+
+
+                <!-- OVERPASS -->
+            <div class="tab-pane" id="overpass" role="tabpanel" aria-labelledby="overpass-tab">
+                <!-- LOGO MAPA -->
+                <div class="row justify-content-center">    
+                    <div class="col-md-6 col-lg-2 mx-lg-5 my-5 ">
+                                <img class="img-fluid" src="./img/overpass/Set_overpass.webp" alt="Overpas logo"> 
+                    </div>
+                </div>
+                
+                <!-- TITULO -->
+                <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                    <h1 class="display-5 fw-normal">DE_OVERPASS</h1>  
+                </div>
+                <hr>
+                <!-- CAROUSEL -->
+                <div class="row justify-content-center bg-dark">    
+                    <div class="col-md-10 col-lg-5 mx-lg-5 my-5 ">
+                        <div id="carouselExampleCaptions2" class="carousel slide" data-bs-ride="false">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="./img/overpass/CSGO_Overpass_A1.webp" class="d-block w-100" alt="Punto de A">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de A</h5>
+                                    <p>Vista del punto de A desde banco.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/CSGO_Overpass_A2.webp" class="d-block w-100" alt="Punto de A">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de A</h5>
+                                    <p>Vista del punto de A desde baños.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/CSGO_Overpass_A_Fountain.webp" class="d-block w-100" alt="Fuente">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Fuente</h5>
+                                    <p>Vista de fuente desde caverna.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/CSGO_Overpass_A_site_31_March_2015_update_Upper_Park.webp" class="d-block w-100" alt="Larga">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Larga</h5>
+                                    <p>Vista de larga desde la entrada de fuente.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/CSGO_Overpass_B1.webp" class="d-block w-100" alt="Punto de B">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de B</h5>
+                                    <p>Vista de B desde corta.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/CSGO_Overpass_B2.webp" class="d-block w-100" alt="Punto de B">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de B</h5>
+                                    <p>Vista de B desde 'monster'.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/Overpass-midtoilets.webp" class="d-block w-100" alt="Banios">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Baños</h5>
+                                    <p>Vista de baños desde globos.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/overpass/Overpass3.webp" class="d-block w-100" alt="Banana">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Banana</h5>
+                                    <p>Vista de banana desde entrada 'conector'. </p>
+                                </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                            </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center">
+                    <!-- PRIMER VIDEO -->
+                    <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Pxia9XiV0GI" frameborder="0" allowfullscreen=""></iframe>
+                                </div>  
+                    </div>
+                    <!-- COMO JUGAR -->
+                    <span class="col-lg-5 mx-lg-5 my-5">
+                        <h2 class="text-center text-break text-bg-dark text-monospace">Táctica, ejecutar punto
+                            de B en el mapa de Overpass.</h2>
+                        <p class="text-left fw-bold p-3 fs-4 ">En el mapa de Overpass es muy importante establecer control y
+                            denegar la mayor información posible al enemigo.
+                            Una vez entendamos ese concepto básico y seamos capaces de ganar control del mapa
+                            pasaremos a ejecutar en un punto.
+                            <br><br>El punto de A, es un punto que requiere más tiempo para ejecutarlo debido a
+                            lo accesible que se hace en su defensa.
+                            Por tanto nos centraremos en apreder las ejecuciones básicas del punto B.
+                            Para ejecutar el punto B primero nos aseguraremos de tomar control de corta y
+                            monster, también si es posible conector.
+                            <br><br>El siguiente paso es unificar al equipo para realizar el 'execute'.
+
+                        </p>
+                    </span>
+                </div>
+            
+                <div class="row justify-content-center">   
+                    <!--SEGUNDO VIDEO  -->
+                    <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/IEPAbDru3HQ" frameborder="0" allowfullscreen=""></iframe>
+                        </div>  
+                    </div>
+                    <!-- MAPA CALL OUTS -->
+                    <span class="col-lg-5 mx-lg-5 my-5 img-fluid text-center">
+                        <img class="img-fluid rounded rounded-5 h-75" src="./img/overpass/callouts.jpg" alt="radar mapa" srcset="">
+                    </span>
+                </div>
+            </div>
+        
+        
+            <!-- MIRAGE -->
+            <div class="tab-pane" id="mirage" role="tabpanel" aria-labelledby="mirage-tab">
+                <!-- LOGO MAPA -->
+                <div class="row justify-content-center">    
+                    <div class="col-md-6 col-lg-2 mx-lg-5 my-5 ">
+                                <img class="img-fluid" src="./img/mirage/Set_mirage.webp" alt="mirage logo"> 
+                    </div>
+                </div>
+                
+                <!-- TITULO -->
+                <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                    <h1 class="display-5 fw-normal">DE_MIRAGE</h1>  
+                </div>
+                <hr>
+                <!-- CAROUSEL -->
+                <div class="row justify-content-center bg-dark">    
+                    <div class="col-md-10 col-lg-5 mx-lg-5 my-5 ">
+                        <div id="carouselExampleCaptions3" class="carousel slide" data-bs-ride="false">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="./img/mirage/CSGO_Mirage_19_Jan_2020_update_A_site_picture_1.webp" class="d-block w-100" alt="Punto de A">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de A</h5>
+                                    <p>Vista del punto de A desde rampa.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/De_mirage-csgo-bombA-2.webp" class="d-block w-100" alt="Punto de A">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de A</h5>
+                                    <p>Vista del punto de A desde ticket.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/De_mirage-csgo-bombA-mid.webp" class="d-block w-100" alt="Conector">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Conector</h5>
+                                    <p>Vista de connector.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/De_mirage-csgo-bombB-1.webp" class="d-block w-100" alt="Punto de B">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de B</h5>
+                                    <p>Vista de B desde la entrada de cocina.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/CSGO_Mirage_19_Jan_2020_update_B_site_picture_1.webp" class="d-block w-100" alt="Punto de B">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Punto de B</h5>
+                                    <p>Vista de B desde furgoneta.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/CSGO_Mirage_19_Jan_2020_update_mid_picture_1.webp" class="d-block w-100" alt="Medio">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Medio</h5>
+                                    <p>Vista de medio desde 'top mid'.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/CSGO_Mirage_19_Jan_2020_update_mid_picture_2.webp" class="d-block w-100" alt="Medio">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Medio</h5>
+                                    <p>Vista de medio desde banco.</p>
+                                </div>
+                                </div>
+                                <div class="carousel-item">
+                                <img src="./img/mirage/De_mirage-csgo-palace-2.webp" class="d-block w-100" alt="Palacio">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Palacio</h5>
+                                    <p>Vista de palacio. </p>
+                                </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions3" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                            </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center">
+                    <!-- PRIMER VIDEO -->
+                    <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                                <div class="ratio ratio-16x9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gBO_sBc5Mws" frameborder="0" allowfullscreen=""></iframe>
+                                </div>  
+                    </div>
+                    <!-- COMO JUGAR -->
+                    <span class="col-lg-5 mx-lg-5 my-5">
+                        <h2 class="text-center text-break text-bg-dark text-monospace">Táctica, ejecutar punto
+                            de A en el mapa de Mirage.</h2>
+                        <p class="text-left fw-bold p-3 fs-4 ">En el mapa de Mirage es muy importante establecer control y
+                            denegar la mayor información posible de medio al enemigo.
+                            Una vez entendamos ese concepto básico y seamos capaces de ganar control del mapa
+                            pasaremos a ejecutar en un punto.
+                            <br><br>El punto de A, es el punto grande del mapa, su defensa suele ser mayor, por lo que será necesario
+                            contar con la suficiente utilidad y conocimiento del mapa para hacer una buena ejecución.
+                            Para ejecutar el punto A primero nos aseguraremos de tomar control de medio y
+                            palacio, también si es posible conector.
+                            <br><br>El siguiente paso es unificar al equipo para realizar el 'execute'.
+
+                        </p>
+                    </span>
+                </div>
+            
+                <div class="row justify-content-center">   
+                    <!--SEGUNDO VIDEO  -->
+                    <div class="col-md-6 col-lg-5 mx-lg-5 my-5">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/N1rGrmJKmFU" frameborder="0" allowfullscreen=""></iframe>
+                        </div>  
+                    </div>
+                    <!-- MAPA CALL OUTS -->
+                    <span class="col-lg-5 mx-lg-5 my-5 img-fluid text-center">
+                        <img class="img-fluid rounded rounded-5 h-75" src="./img/mirage/callouts.png" alt="" srcset="">
+                    </span>
+                </div>
+            </div>
+        </div>            
+    </section>
+
+    <footer class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a class="mx-lg-3" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                    <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+                </a>
+                <small>
+                    Esta obra está bajo una  
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                         licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional
+                    </a>
+                </small>
+                <div class="text-end mx-lg-5 px-lg-5">
+                    <small>Jairo García Barrera</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

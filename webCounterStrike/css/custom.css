@@ -1,0 +1,66 @@
+*{
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0rem;
+}
+
+html{
+  background-color: #ffffff;
+}
+
+body{
+    margin: 0;
+    z-index: 0;
+    position: relative;
+    
+}
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -10;
+}
+
+/* Navegación superior */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.visible{
+  display: block;
+}
+
+.no-visible{
+  display: none;
+}
+
+
+.bi-download{
+  margin-right: 1em;
+}
+
+.botones{
+  border-color: black;
+}
+.botones:hover{
+  scale: 1.05;
+  border-color: grey;
+  
+  
+}
+
+#cfg, #playcs, #stream, #tacticas{
+    min-height: 87vh;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
