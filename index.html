@@ -24,11 +24,14 @@
 </head>
 
 <body>
+    <!-- Fondo de pantalla -->
     <video id="background-video" autoplay loop muted>
         <source src="./img/ancient720.webm" type="video/mp4">
     </video>
+
     <header class="p-3 text-bg-dark">
-        <div class="container">
+        <!-- Barra de navegación lg-md -->
+        <div class="container d-none d-lg-block d-md-block">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <i class="bi bi-steam fs-2 text-white"></i>
@@ -42,13 +45,58 @@
                     <li><a href="#" class="nav-link px-2 text-white" onclick="showContent('tacticas')">Tácticas</a></li>
                 </ul>
 
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-lg-block d-none" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-light me-2">Login</button>
                     <button type="button" class="btn btn-warning">Sign-up</button>
                 </div>
             </div>
         </div>
+        <!-- Barra navegación sm -->
+        <nav id="navSM" class="navbar navbar-dark bg-dark fixed-top d-lg-none d-md-none">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><i class="bi bi-steam fs-2 text-white px-2"></i>Counter Strike</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="text-white"><i class="bi bi-arrow-left-circle"></i></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header text-white">
+                    <a href="index.html" class="nav-link px-2 text-secondary"><h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-steam fs-2 text-white px-2"></i>Counter Strike</h5></a>
+                  <button type="navbar-toggler" class="navbar-toggler" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-arrow-right-circle"></i></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('playcs')">Servidores</a>
+                        </button>    
+                    </li>
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('stream')">Directo</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('cfg')">Configuración</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('tacticas')">Tácticas</a>
+                        </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
     </header>
+   
 
     <!-- Play CSGO -->
     <section id="playcs" class="row-cols-12 bg-white bg-opacity-50 visible">
@@ -260,16 +308,15 @@
     </section>
 
     <!-- CFG's -->
-    <section id="cfg" class="row-cols-12 bg-white bg-opacity-50 no-visible container-fluid justify-content-center">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <section id="cfg" class="row-cols-12 bg-white bg-opacity-50 no-visible px-0">
+        <div class="pricing-header p-lg-3 pb-md-4 mx-auto text-center">
             <h1 class="display-4 fw-normal">Configuración - CFG</h1>
             <p class="fs-5 text-muted">Descarga la configuración de juego de tu jugador profesional favorito haciendo
                 click en "Descargar CFG".</p>
         </div>
-        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
-            <spam class="col-lg-1"></spam>
+        <div class="row container-fluid justify-content-center m-0 px-md-3 my-1">
             <!-- player 1 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white">
                 <h2 class="fw-bold text-center text-dark">S1mple</h2>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/s1mple.png"
@@ -291,7 +338,7 @@
 
             <spam class="col-lg-2"></spam>
             <!-- player 2 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white">
                 <h3 class="fw-normal text-center text-dark">El1ge</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/elige.png"
@@ -311,10 +358,9 @@
                     class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG</a>
             </div>
         </div>
-        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
-            <spam class="col-lg-1"></spam>
+        <div class="row container-fluid justify-content-center m-0 px-md-3 my-1">
             <!-- player 3 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Zywoo</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/zywoo.png"
@@ -336,7 +382,7 @@
         
             <spam class="col-lg-2"></spam>
             <!-- player 4 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Flamie</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/flamie.png"
@@ -356,10 +402,9 @@
             </div>
         </div>
 
-        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
-            <spam class="col-lg-1"></spam>
+        <div class="row container-fluid justify-content-center m-0 px-md-3 my-1">
             <!-- player 5 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Jame</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/jame.png"
@@ -381,7 +426,7 @@
 
             <spam class="col-lg-2"></spam>
             <!-- player 6 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Sh1ro</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/sh1ro.png"
@@ -400,7 +445,7 @@
                     class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG
                 </a>
             </div>
-        </div>
+        </div> 
     </section>
 
     <!-- Tácticas -->
