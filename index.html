@@ -24,11 +24,14 @@
 </head>
 
 <body>
+    <!-- Fondo de pantalla -->
     <video id="background-video" autoplay loop muted>
         <source src="./img/ancient720.webm" type="video/mp4">
     </video>
+
     <header class="p-3 text-bg-dark">
-        <div class="container">
+        <!-- Barra de navegación lg-md -->
+        <div class="container d-none d-lg-block d-md-block">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <i class="bi bi-steam fs-2 text-white"></i>
@@ -43,12 +46,177 @@
                 </ul>
 
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-warning">Sign-up</button>
+                    <button type="button" class="btn btn-outline-light me-2" data-mdb-target="#singPane" data-mdb-toggle="modal" onclick="showLog('singPane', 1)">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="showLog('singPane', 2)">Sign-up</button>
                 </div>
             </div>
         </div>
+        <!-- Barra navegación sm -->
+        <nav id="navSM" class="navbar navbar-dark bg-dark fixed-top d-lg-none d-md-none">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><i class="bi bi-steam fs-2 text-white px-2"></i>Counter Strike</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="text-white"><i class="bi bi-arrow-left-circle"></i></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header text-white">
+                    <a href="index.html" class="nav-link px-2 text-secondary"><h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><i class="bi bi-steam fs-2 text-white px-2"></i>Counter Strike</h5></a>
+                  <button type="navbar-toggler" class="navbar-toggler" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-arrow-right-circle"></i></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('playcs')">Servidores</a>
+                        </button>    
+                    </li>
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('stream')">Directo</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('cfg')">Configuración</a>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                            <a href="#" class="nav-link px-2 text-white" onclick="showContent('tacticas')">Tácticas</a>
+                        </button>
+                    </li>
+                  </ul>
+                  <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2" data-mdb-target="#singPane" data-mdb-toggle="modal" onclick="showLog('singPane', 1)">Login</button>
+                    <button type="button" class="btn btn-warning" onclick="showLog('singPane', 2)">Sign-up</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </nav>
     </header>
+
+    <!-- Pop up register and singup -->
+    <div class="modal show my-5 p-5 no-visible" id="singPane" tabindex="30" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content bg-dark bg-gradient border border-2 border-warning">
+            <div class="modal-body p-4">
+              <!-- Pills navs -->
+              <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                <li class="nav-item mx-1" role="presentation">                    
+                    <a class="nav-link active bg-dark border border-2 border-light" id="mdb-tab-login" data-mdb-toggle="pill" href="#loginPane" role="tab" aria-controls="loginPane" aria-selected="true" onclick="swapLogRegister('loginPane')">Login</a>
+                </li>
+                <li class="nav-item mx-1" role="presentation">
+                  <a class="nav-link border border-2 border-dark bg-warning text-black" id="mdb-tab-register" data-mdb-toggle="pill" href="#registerPane" role="tab" aria-controls="registerPane" aria-selected="true" tabindex="-1" onclick="swapLogRegister('registerPane')">Sing-up</a>
+                </li>
+              </ul>
+              <!-- Pills navs -->
+
+              <!-- Pills content -->
+              <div class="tab-content"> 
+                <!-- class="tab-pane fade active show" -->
+                <div class="tab-pane fade active show" id="loginPane" role="tabpanel" aria-labelledby="mdb-tab-login">
+                  <form>
+                    <div class="text-center mb-3">
+                    
+                    </div>
+
+                    
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input type="email" id="loginName" class="form-control">
+                      <label class="form-label text-white" for="loginName" style="margin-left: 0px;">Email / Nombre de usuario</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 114.4px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                      <input type="password" id="loginPassword" class="form-control">
+                      <label class="form-label text-white" for="loginPassword" style="margin-left: 0px;">Contraseña</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                      <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked="">
+                          <label class="form-check-label text-white" for="loginCheck"> Recordarme </label>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <!-- Simple link -->
+                        <a href="#!">¿Has olvidado la contreseña?</a>
+                      </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4 bg-dark border border-2 border-white" onclick="closePane('singPane')">Iniciar sesión</button>
+                    <button class="btn btn-primary btn-block mb-4 bg-dark border border-2 border-danger" onclick="closePane('singPane')">Cancelar</button>
+
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                      <p class="mb-1 text-bg-warning bg bg-gradient borer border-2 border-dark rounded-2">¿Aún no eres miembro? <a href="#!" onclick="swapLogRegister('registerPane')">Crear una cuenta.</a></p>
+                    </div>
+                  </form>
+                </div>
+                <!-- class="tab-pane fade" -->
+                <div class="text-white tab-pane fade" id="registerPane" role="tabpanel" aria-labelledby="mdb-tab-register">
+                  <form>
+                
+
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="registerName" class="form-control">
+                      <label class="form-label" for="registerName" style="margin-left: 0px;">Nombre</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 42.4px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="registerUsername" class="form-control">
+                      <label class="form-label" for="registerUsername" style="margin-left: 0px;">Nombre de usuario</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 66.4px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input type="email" id="registerEmail" class="form-control">
+                      <label class="form-label" for="registerEmail" style="margin-left: 0px;">Email</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 40px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                      <input type="password" id="registerPassword" class="form-control">
+                      <label class="form-label" for="registerPassword" style="margin-left: 0px;">Contraseña</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- Repeat Password input -->
+                    <div class="form-outline mb-4">
+                      <input type="password" id="registerRepeatPassword" class="form-control">
+                      <label class="form-label" for="registerRepeatPassword" style="margin-left: 0px;">Repetir contraseña</label>
+                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 106.4px;"></div><div class="form-notch-trailing"></div></div></div>
+
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked="" aria-describedby="registerCheckHelpText">
+                      <label class="form-check-label" for="registerCheck">
+                        He leído y acepto los términos.
+                      </label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-1 bg-dark border border-2 border-white" onclick="closePane('singPane')">Registrarme</button>
+                    <button class="btn btn-primary btn-block mb-1 bg-dark border border-2 border-danger" onclick="closePane('singPane')">Cancelar</button>
+
+                  </form>
+                </div>
+              </div>
+              <!-- Pills content -->
+            </div>
+          </div>
+        </div>
+      </div>
+   
 
     <!-- Play CSGO -->
     <section id="playcs" class="row-cols-12 bg-white bg-opacity-50 visible">
@@ -260,16 +428,15 @@
     </section>
 
     <!-- CFG's -->
-    <section id="cfg" class="row-cols-12 bg-white bg-opacity-50 no-visible container-fluid justify-content-center">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <section id="cfg" class="row-cols-12 bg-white bg-opacity-50 no-visible px-0">
+        <div class="pricing-header p-lg-3 pb-md-4 mx-auto text-center">
             <h1 class="display-4 fw-normal">Configuración - CFG</h1>
             <p class="fs-5 text-muted">Descarga la configuración de juego de tu jugador profesional favorito haciendo
                 click en "Descargar CFG".</p>
         </div>
-        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
-            <spam class="col-lg-1"></spam>
+        <div class="row container-fluid justify-content-center m-0 px-md-3 my-1">
             <!-- player 1 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white">
                 <h2 class="fw-bold text-center text-dark">S1mple</h2>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/s1mple.png"
@@ -291,7 +458,7 @@
 
             <spam class="col-lg-2"></spam>
             <!-- player 2 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white">
                 <h3 class="fw-normal text-center text-dark">El1ge</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/elige.png"
@@ -311,10 +478,9 @@
                     class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG</a>
             </div>
         </div>
-        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
-            <spam class="col-lg-1"></spam>
+        <div class="row container-fluid justify-content-center m-0 px-md-3 my-1">
             <!-- player 3 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Zywoo</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/zywoo.png"
@@ -336,7 +502,7 @@
         
             <spam class="col-lg-2"></spam>
             <!-- player 4 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Flamie</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/flamie.png"
@@ -356,10 +522,9 @@
             </div>
         </div>
 
-        <div class="row px-lg-4 px-md-3 px-sm-2 my-1">
-            <spam class="col-lg-1"></spam>
+        <div class="row container-fluid justify-content-center m-0 px-md-3 my-1">
             <!-- player 5 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Jame</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/jame.png"
@@ -381,7 +546,7 @@
 
             <spam class="col-lg-2"></spam>
             <!-- player 6 -->
-            <div class="col-lg-4 my-2 mx-3 p-5 text-white ">
+            <div class="col-lg-3 my-2 mx-lg-3 mx-sm-0 p-5 text-white ">
                 <h3 class="fw-normal text-center text-dark">Sh1ro</h3>
                 <div class="text-center w-100 bg-dark rounded-2 border-1 border-dark border bg-opacity-25">
                     <img class="rounded-lg-3 rounded-5  img-fluid border-dark w-50" src="./img/sh1ro.png"
@@ -400,7 +565,7 @@
                     class="btn btn-outline-secondary btn-lg px-4 bg-warning border-black text-dark botones"><i class="bi bi-download"></i>Descargar CFG
                 </a>
             </div>
-        </div>
+        </div> 
     </section>
 
     <!-- Tácticas -->
