@@ -24,12 +24,13 @@ function showContent(idDiv){
     }
 }
 
-function swapLogRegister(idDiv){
-    let log = 'loginPane';
-    let reg = 'registerPane';
-    if(idDiv === reg){ 
-        reg = document.getElementById(reg);
-        log = document.getElementById(log);
+function swapLogRegister(idDiv){ 
+    // Cambia entre el panel de inicio de sesión y el panel de registro
+    let reg = document.getElementById('registerPane');
+    let log = document.getElementById('loginPane');
+
+    if(idDiv === 'registerPane'){ 
+        
         if(!reg.classList.contains('show')){
             log.classList.remove('show');
             log.classList.remove('active');
@@ -38,8 +39,7 @@ function swapLogRegister(idDiv){
             
         }
     }else{
-        reg = document.getElementById(reg);
-        log = document.getElementById(log);
+
         if(!log.classList.contains('show')) {
             reg.classList.remove('show');
             reg.classList.remove('active');
@@ -50,16 +50,15 @@ function swapLogRegister(idDiv){
     
 }
 
-function showLog(idDiv, option){
-    let selectedDiv = idDiv;
-    if(selectedDiv === 'singPane')
-        selectedDiv = document.getElementById(idDiv);
-        if(selectedDiv.classList.contains('no-visible')){
-            selectedDiv.classList.remove('no-visible');
-            selectedDiv.classList.add('visible');
-            (option === 1) ? swapLogRegister('loginPane') :  swapLogRegister('registerPane');
-           
-        }
+function showLog(idDiv, option){ //Muestra el formulario de inicio de sesión
+    let selectedDiv = document.getElementById(idDiv);
+      
+    if(selectedDiv.classList.contains('no-visible')){
+        selectedDiv.classList.remove('no-visible');
+        selectedDiv.classList.add('visible');
+        (option === 1) ? swapLogRegister('loginPane') :  swapLogRegister('registerPane');
+        
+    }
 }
 
 function closePane(idDiv){
